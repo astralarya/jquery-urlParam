@@ -27,14 +27,21 @@ jQuery.urlParams = (function() {
     var Param = {};
     var URLVariables = window.location.search.substring(1).split('&');
     for (var index in URLVariables) {
-        var Variable = URLVariables[index].split('=');
-        if (Object.keys(Param).indexOf(Variable[0]) == -1) {
-            Param[Variable[0]] = Variable[1];
+        var split = URLVariables[index].split('=');
+        var key = split[0];
+        split.shift();
+        if(split.length) {
+          var value = split.join('=');
         } else {
-            if(jQuery.isArray(Param[Variable[0]])) {
-                Param[Variable[0]].push(Variable[1]);
+          var value = null;
+        }
+        if (Object.keys(Param).indexOf(key) == -1) {
+            Param[key] = value;
+        } else {
+            if(jQuery.isArray(Param[key])) {
+                Param[key].push(value);
             } else {
-                Param[Variable[0]] = [ Param[Variable[0]], Variable[1]];
+                Param[key] = [ Param[key], value];
             }
         }
     }
