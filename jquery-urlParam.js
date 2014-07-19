@@ -23,7 +23,7 @@
   THE SOFTWARE.
 */
 
-jQuery.urlParams = (function() {
+jQuery.urlParam = (function() {
     var Param = {};
     var URLVariables = window.location.search.substring(1).split('&');
     for (var index in URLVariables) {

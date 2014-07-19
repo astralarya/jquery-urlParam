@@ -1,13 +1,13 @@
-# jquery-urlParams
+# jquery-urlParam
 
-**jQuery-urlParams** - jQuery plugin that constructs an object representing the current URL parameters
+**jQuery-urlParam** - jQuery plugin that constructs an object representing the current URL parameters
 
 
 ## Usage
 
 URL parameters can be accessed with
 
-    $.urlParams
+    $.urlParam
 
 Arguments can be accessed as keys of the parameter object.
 For example, the arguments to this URL:
